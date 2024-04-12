@@ -1,10 +1,10 @@
 {
-  "name": "develop_weather_app_using_node_and_express_01h_10m_24s",
+  "name": "weather-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +12,9 @@
   "dependencies": {
     "express": "^4.19.2",
     "hbs": "^4.2.0",
-    "nodemon": "^3.1.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
