@@ -10,6 +10,12 @@ app.get("/", (req, res) => {
   res.send("Hello this is first express app.");
 });
 
+app.get("/weather", (req, res) => {
+  if (!req.query.address) {
+    return res.send("Address is required");
+  }
+});
+
 app.listen(port, () => {
   console.log("Server is listening on port " + port);
 });
