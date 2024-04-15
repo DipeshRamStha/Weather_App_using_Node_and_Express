@@ -5,10 +5,19 @@ const path = require("path");
 const app = express();
 const weatherData = require("../utils/weatherData");
 
+const publicPath = path.join(__dirname, "../public");
+const viewsPath = path.join(__dirname, "../templates/views");
+const partialsPath = path.join(__dirname, "../templates/partials");
+
+app.set("view engine", "hbs");
+app.set("views", viewsPath);
+hbs.registerPartials(partialsPath);
+app.use(express.static(publicPath));
+
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello this is first express app.");
+  res.render("index", { title: "Weather App" });
 });
 
 app.get("/weather", (req, res) => {
