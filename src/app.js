@@ -33,8 +33,9 @@ app.get("/weather", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.send("This route does not exists");
+  res.render("404", { title: "Page not found" });
 });
+
 app.listen(port, () => {
   console.log("Server is listening on port " + port);
 });
