@@ -3,9 +3,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
-    {{>header}}
-    <h1>{{title}}</h1>
+    <div class="main-content">
+      {{>header}}
+      <article class="widget">
+        <form action="" class="weatherLocation">
+          <input class="input-field" type="text" placeholder="Enter your city">
+          <button class="search-button">Search</button>
+        </form>
+      </article>
+    </div>
   </body>
 </html>
