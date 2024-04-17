@@ -28,17 +28,20 @@ h2 {
 }
 
 .widget {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; */
   height: 550px;
   width: 500px;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   background: linear-gradient(120deg, #47bbff, #2b32b2);
   cursor: pointer;
   border-radius: 20px;
   box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3),
     0 17px 17px 0 rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
 }
 
 .weatherLocation {
