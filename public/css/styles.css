@@ -1,4 +1,4 @@
-@import url(https://fonts.gooleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
 
 body {
@@ -10,8 +10,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-   {
-  }
 }
 
 .main-content {
@@ -30,7 +28,7 @@ h2 {
 }
 
 .widget {
-  position: absoute;
+  position: absolute;
   top: 50%;
   left: 50%;
   height: 550px;
