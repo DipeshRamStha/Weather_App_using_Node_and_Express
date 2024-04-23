@@ -7,3 +7,7 @@ const tempElement = document.querySelectory(".temperature span");
 
 const locationElement = document.querySelector(".place");
 const dateElement = document.querySelector(".date");
+
+const currentDate = new Date();
+
+dateElement.textContent = currentDate;
