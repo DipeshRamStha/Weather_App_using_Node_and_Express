@@ -13,3 +13,16 @@ const options = { month: "long" };
 const monthName = currentDate.toLocaleString("en-US", options);
 
 dateElement.textContent = currentDate.getDate() + ", " + monthName;
+
+weatherForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // console.log(search.value);
+  locationElement.textContent = "Loading...";
+  weatherIcon.className = "";
+  tempElement.textContent = "";
+  weatherCondition.textContent = "";
+});
+
+function showData(city) {}
+
+function getWeatherData() {}
