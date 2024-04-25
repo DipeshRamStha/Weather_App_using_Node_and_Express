@@ -28,6 +28,24 @@ weatherForm.addEventListener("submit", (e) => {
 function showData(city) {
   getWeatherData(city, (result) => {
     console.log(result);
+    if (result.cod == 200) {
+      if (
+        result.weather[0].description == "rain" ||
+        result.weather[0].description == "fog"
+      ) {
+        weatherIcon.className = "wi wi-day-" + result.weather[0].description;
+      } else {
+        weatherIcon.className = "wi wi-day-cloudy";
+      }
+      // weatherIcon.className = "wi wi-day-cloudy";
+      locationElement.textContent = result?.name;
+      tempElement.textContent =
+        (result?.main?.temp - 273.5).toFixed(2) + String.fromCharCode(176);
+      weatherCondition.textContent =
+        result?.weather[0]?.description?.toUpperCase();
+    } else {
+      locationElement.textContent = "City not found.";
+    }
   });
 }
 
