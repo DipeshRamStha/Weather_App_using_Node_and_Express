@@ -21,8 +21,21 @@ weatherForm.addEventListener("submit", (e) => {
   weatherIcon.className = "";
   tempElement.textContent = "";
   weatherCondition.textContent = "";
+
+  showData(search.value);
 });
 
-function showData(city) {}
+function showData(city) {
+  getWeatherData(city, (result) => {
+    console.log(result);
+  });
+}
 
-function getWeatherData() {}
+function getWeatherData(city, callback) {
+  const locationApi = weatherApi + "?address=" + city;
+  fetch(locationApi).then((response) => {
+    response.json().then((response) => {
+      callback(response);
+    });
+  });
+}
