@@ -14,6 +14,35 @@ const monthName = currentDate.toLocaleString("en-US", options);
 
 dateElement.textContent = currentDate.getDate() + ", " + monthName;
 
+if ("geolocation" in navigator) {
+  locationElement.textContent = "Loading...";
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const apiUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && data.address && data.address.city) {
+            const city = data.address.city;
+            showData(city);
+          } else {
+            console.log("City not found.");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    function (error) {
+      console.log(error.message);
+    }
+  );
+} else {
+  console.log("Geolocation is not available on this browser.");
+}
+
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   // console.log(search.value);
